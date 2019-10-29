@@ -1,0 +1,40 @@
+@font-face {
+    font-family:productsans;
+    src:url('../fonts/ProductSans/Product\ Sans\ Bold.ttf')
+}
+
+
+
+.redes{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:10px;
+    margin-bottom:10px
+}
+
+.red img{
+    width:42px;
+    height:42px;
+}
+.facebook img{
+    margin-right: 30px;
+}
+.linkedin img{
+    margin-right: 30px;
+}
+.github img{
+    margin-right: 30px;
+}
+
+
+
+footer{text-align:center;background-color:#9C9C9C9C;color:#fff;min-height:50px;display:flex;flex-direction:column;justify-content:center;align-items:center}img[alt*="000webhost"]{display:none}
+
+@media screen and (max-width: 700px){
+    .responsivefooter{
+        font-size: 16px;
+    }
+    .red_facebook img{width:20px;margin-right:20px}
+    .red_instagram img{width:20px}
+}

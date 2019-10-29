@@ -1,0 +1,47 @@
+@font-face {
+    font-family:productsans;
+    src:url('../fonts/ProductSans/Product\ Sans\ Bold.ttf')
+}
+
+
+.logoimagen{
+    width: 125px;
+    height: 125px;
+}
+.logoytexto{
+    display: inline-block;
+    text-align: center;
+}
+.tamaniofuente{
+    font-size: 30px;  
+}
+
+.acomodoresponsive2{
+    display: none;
+}
+.fuentes{
+    font-family:"productsans";
+}
+
+@media screen and (max-width:700px){
+    /*.tamaniofuente{
+        font-size: 30px;  
+    }*/
+    /*.logoimagen{
+        width: 100px;
+        height: 100px;
+    }*/
+   
+    .acomodoresponsive{
+        display: none;
+    }
+    
+    .acomodoresponsive2{
+         
+        display: block;
+        font-size: 22px;
+    }
+}
+#barradenavegacion{
+    background-color: #222222;
+}
