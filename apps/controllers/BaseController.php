@@ -14,8 +14,8 @@ class BaseController{
         );
     
     }
-    function afterroute(){
+    /*function afterroute(){
         echo Template::instance()->render('layout.php');
-    }
+    }*/
 
 }

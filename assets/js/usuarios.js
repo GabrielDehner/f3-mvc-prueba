@@ -3,7 +3,7 @@ var table;
 function edit_person1(idUsr){
     alert('llego'+idUsr);
 }
-/*
+
 function edit_person(idUsr) {
     save_method = 'update';
     $('#form')[0].reset(); // reset form on modals
@@ -22,16 +22,16 @@ function edit_person(idUsr) {
         
         success: function(data)
         {
-            alert(data);
-            /*
+            //alert(data[0].id);
+            
             //alert(data.email);
-            $('[name="idUsr"]').val(data.id);
-            $('[name="name"]').val(data.nombre);
-            $('[name="telephone"]').val(data.telefono);
-            $('[name="email"]').val(data.email);
+            $('[name="idUsr"]').val(data[0].id);
+            $('[name="name"]').val(data[0].nombre);
+            $('[name="telephone"]').val(data[0].telefono);
+            $('[name="email"]').val(data[0].email);
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
             $('.modal-title').text('Editar Usuario'); // Set title to Bootstrap modal title
-            *//*
+            
 
         },
         error: function (jqXHR, textStatus, errorThrown)
@@ -50,12 +50,8 @@ function edit_person(idUsr) {
     $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
     $('.modal-title').text('Editar Usuario');*/
     //alert('llego'+idUsr);
-//}
-function edit_person(idUsr) {
-    $.get("/f3-mvc-prueba/ajax_edit/" + idUsr, function (data) {
-        console.log(data);
-    });
 }
+
 function save(){
 
     if($('#name').val()!='' && $('#surname').val()!='' && $('#telephone').val()!='' && $('#sex').val()!='' && $('#birthday').val()!='' && $('#email').val()!='') {
@@ -68,7 +64,7 @@ function save(){
         if (save_method == 'add') {
             url = "noexiste/ajax_add";
         } else {
-            url = "UpdateUsers/ajax_update";
+            url = "/f3-mvc-prueba/ajax_update";
         }
 
         //if(save_method == 'add') {
@@ -82,11 +78,12 @@ function save(){
 
 
                 $('#modal_form').modal('hide');
-                reload_table(data);
+                //reload_table(data);
 
 
                 $('#btnSave').text('Guardar'); //change button text
                 $('#btnSave').attr('disabled', false); //set button enable
+                
 
 
             },
@@ -97,6 +94,7 @@ function save(){
 
             }
         });
+        location.reload();
 
     }else{
         alert("Complete todos los campos");

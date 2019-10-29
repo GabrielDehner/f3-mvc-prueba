@@ -85,3 +85,21 @@
     </div><!-- /.modal-dialog -->
 </div>
 
+<script>
+    /*function new_function(id){
+        $.ajax(
+        //'/f3-mvc-prueba/assets/js/prueba_php.php',
+        //'/f3-mvc-prueba/apps/controllers/HomeController.php',
+        '/f3-mvc-prueba/ajax_edit/'+id,
+        {
+            success: function(data) {
+                //alert('AJAX call was successful!');
+                alert('Data from the server' + data);
+            },
+            error: function() {
+                alert('There was some error performing the AJAX call!');
+            }
+        }
+        );
+    }*/
+</script>

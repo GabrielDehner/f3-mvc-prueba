@@ -7,8 +7,11 @@ class HomeController extends BaseController{
         $this->f3->set('users', $users->find());
 
         $this->f3->set('var1', 'Juan Pablo Carrizo');
-        $this->f3->set('view', 'pages/index.php');
-        //echo Template::instance()->render('pages/index.html');
+        
+       // $this->f3->set('view', 'pages/index.php');
+        echo Template::instance()->render('header.php');
+        echo Template::instance()->render('pages/index.php');
+        echo Template::instance()->render('footer.php');
     }
     function menu(){
         $this->f3->set('view', 'pages/menu.php');
@@ -19,7 +22,10 @@ class HomeController extends BaseController{
 
     }
     function agregarUsuario(){
-        $this->f3->set('view', 'pages/agregarUsuario.php');
+        echo Template::instance()->render('header.php');
+        echo Template::instance()->render('pages/agregarUsuario.php');
+        echo Template::instance()->render('footer.php');
+        //$this->f3->set('view', 'pages/agregarUsuario.php');
 
     }
     function add(){
@@ -62,6 +68,22 @@ class HomeController extends BaseController{
         echo json_encode($data);
        // $this->f3->retu
         //$this->f3->reroute('/');
+        
+    }
+    function ajax_update(){
+        $user = new Users($this->db);
+        $user->id=$this->f3->get('POST.idUsr');
+        $user->nombre=$this->f3->get('POST.name');
+        $user->telefono=$this->f3->get('POST.telephone');
+        $user->email=$this->f3->get('POST.email');
+   
+        $this->db->exec("UPDATE users
+        SET nombre='".$user->nombre."',
+        telefono = '".$user->telefono."',
+        email = '".$user->email."'
+        WHERE id='".$user->id."'
+        ");;
+       	echo json_encode('1');
 	}
 
     function get(){
